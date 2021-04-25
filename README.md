@@ -1,5 +1,5 @@
 # rShinyApp-covid19Indonesia
-
+# (still on progress)
 Operation Research Project: Covid 19 Time Series Prediction
 Members And Contribution:
 
@@ -23,9 +23,7 @@ Inserting Bar plot to R Shiny
 Kelvin Wyeth
 Making the Line plot for the plot page
 Inserting the Line plot to R Shiny
-
-
-Klemens
+Klemens - 
 
 
 
