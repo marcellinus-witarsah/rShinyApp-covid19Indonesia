@@ -16,7 +16,7 @@ NIM | Name | Contribution
 
 # Introduction
 This project is aimed at predicting the outcome of Covid-19 cases in Indonesia using data provided by Hendratno who is the Government Official of the Training Center at the Ministry of Communication and Informatics of Indonesia. He shared the data on Kaggle which can be accessed using this link https://www.kaggle.com/hendratno/covid19-indonesia. The outline of this report will include, Covid-19 tracker map, Covid-19 line plot, Covid-19 bar plot and prediction of Covid-19 cases using the Prophet package. All analysis will be conducted using the R programming language using RStudio as its IDE and results will be presented as a web application using the RShiny package.
-Covid 19 Tracker Map (Marcel)
+# Covid 19 Tracker Map (Marcel)
 For making Covid 19 Tracker Map we will be needing Indonesia geojson data which can be downloaded from Github using this link https://github.com/anshori/geojsoncombine-corona/tree/master/data (from anshori). This data contains longitudes and latitudes (multipolygon points) for each province in Indonesia. We need to rearrange the order of geojson data to be the same as Covid 19 data in our project. These steps will be explained below:
 Import geojsonio Package in R and read the geojson data using geojson_read() function.
 Take a look in the data and we need to make sure that each data has the same province name. For example, we encountered a different format name for Yogyakarta, in our data is “Daerah Istimewa Yogyakarta” but in the geojson data is "D.I. Yogyakarta". So we need to change it.
@@ -27,8 +27,7 @@ After that we will pipe it to the addPolygons() function to draw the polygon acc
 After that we will display it in the R Shiny web application and we will add a value box which we will be colored in orange (total cases), red (total deaths), green (total recovered), and blue (total provinces). There will be a table displayed to give further information about Covid-19 cases according to input date from slider input. Further information about the rShiny web application will be displayed within the code.
 
 
-Covid 19 Line Plot (Kelvin Wyeth)
-
+# Covid 19 Line Plot (Kelvin Wyeth)
 Next is the plot page, which consists of both the line graph and bar graph visualization of the COVID-19 data of Indonesia.
 In order to create the line plot graph of the data, as shown above, we need to load the libraries necessary to make a simple plot graph, such as ggplot, plotly, data, and tidyverse. The simple line plot is then created using the steps below:
 Call the ggplot() function, which will then specify the data object for the line graph.
@@ -41,7 +40,8 @@ Select Province: Chosen if Province is selected, choice is between the 33 Provin
 Select Cases: Choices are Cases, Deaths, Recovered, and Active. Additional choices are for data frequency, such as Cumulative, All, and Daily.
 Select Date: Use the slider to adjust the date of the data update.
 In order to update the plot visuals based on the selections on the page, we built the system in the ui_plot_page, for both line and bar plots. The sidebar panel and the pickerInput() function shows the choices mentioned above, and the sliderInput() shows the date selection.
-Covid 19 Bar Plot (Kevin)
+
+# Covid 19 Bar Plot (Kevin Edward)
 To make Bar Plot we first need to load the library tidyverse, ggplot & data, and plotly library. Then we  create simple bar plot using ggplot package using the following step:
 Start by calling ggplot() function, then specify the data object. It has to be a data frame.
 Then set the aes() function: set the categoric variable for Y axis, and numeric for X axis. 
@@ -49,7 +49,7 @@ Then finally call geom_bar() function that makes the height of the bar proportio
 Then to make a select input list first we need to make the visual using updatepickertinput() to change the value of a select input on the client. Then we categorize the session, inputID and the choice. In our case we use 4 picker inputs to call our data such as Select Type of Plot, Level, Select Province, Select Cases. each of them has their choice for example Select Type of Plot consist of lone and bar plot, level consist of country and province and so on. Next we have the function of the bar plot. Our case it will show the sum of the max case, death, recovered and active by hovering the 
 Next, we build our system in a new script to update our data from the select option. If we pick the plot bar the system will trigger the function which will update our data to the new data that we picked. In the new script named ui_plot_page we make the pickerinput() this function is used to display the choices that were made. Then we set the picker table size by using the box() function. 
 
-Predicting Covid 19 Using Prophet library (Kevin Subiyantoro)
+# Predicting Covid 19 Using Prophet library (Kevin Subiyantoro)
 Machine Learning Method
 For performing a machine learning method into our Covid-19 Indonesia data, we will be using a famous library package called Prophet. Prophet is an open source TIme Series Forecasting Algorithm developed by the data science team from Facebook. This library is aimed for those who are not an expert in time series forecasting and analytics.
 In this Project we are using Facebook’s Prophet library, as our prediction model. Here is the link for the Prophet documentation https://peerj.com/preprints/3190.pdf.
