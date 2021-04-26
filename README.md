@@ -3,27 +3,13 @@
 Operation Research Project: Covid 19 Time Series Prediction
 Members And Contribution:
 
-NIM
-Name
-Contribution
-01082190016
-Marcellinus Aditya Witarsah
-Making the Covid-19 tracker map
-Making the Covid-19 Web Application template 
-Assisting in creating the time series model prediction using the Prophet package. 
-01082190017
-Kevin Subiyantoro
-Debug and fix Web Application.
-Research and implement a prediction model using Facebook’s Prophet library.
-01082190004
-Kevin Edward
-Making Bar plot for the plot page
-Inserting Bar plot to R Shiny
-01082190015
-Kelvin Wyeth
-Making the Line plot for the plot page
-Inserting the Line plot to R Shiny
-Klemens - 
+NIM | Name | Contribution
+----|------|-------------
+01082190016 | Marcellinus Aditya Witarsah | Making the Covid-19 tracker map, Making the Covid-19 Web Application template, Assisting in creating the time series model prediction using the Prophet package. 
+01082190017 | Kevin Subiyantoro | Debug and fix Web Application, Research and implement a prediction model using Facebook’s Prophet library.
+01082190004 | Kevin Edward | Making Bar plot for the plot page,Inserting Bar plot to R Shiny
+01082190015 | Kelvin Wyeth | Making the Line plot for the plot page, Inserting the Line plot to R Shiny
+ | Klemens |  
 
 
 
