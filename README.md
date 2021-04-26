@@ -1,5 +1,4 @@
 # rShinyApp-covid19Indonesia
-# (still on progress)
 Operation Research Project: Covid 19 Time Series Prediction
 Members And Contribution:
 
