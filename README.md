@@ -9,7 +9,7 @@ NIM | Name | Contribution
 01082190017 | Kevin Subiyantoro | Debug and fix Web Application, Research and implement a prediction model using Facebook’s Prophet library.
 01082190004 | Kevin Edward | Making Bar plot for the plot page,Inserting Bar plot to R Shiny
 01082190015 | Kelvin Wyeth | Making the Line plot for the plot page, Inserting the Line plot to R Shiny
- | Klemens |  
+- | Klemens |  -
 
 
 
