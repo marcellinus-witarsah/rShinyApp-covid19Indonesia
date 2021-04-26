@@ -11,7 +11,12 @@ NIM | Name | Contribution
 01082170018 | Klemens |  none
 
 
-
+# Guide
+Steps for running di application:
+1. Install rStudio from this link https://www.rstudio.com/products/rstudio/download/
+2. Then install the program
+3. Run the program using this order Data Preparation and Preprocessing.R, ui_description_page.R, ui_map_page.R, ui_plot_page.R, ui_prediction_page.R, and ui.R
+4. There is one other program if you want to see how we conduct hyperparameter tuning by running HyperparameterTuningForCountryModel.R
 
 # Introduction
 This project is aimed at predicting the outcome of Covid-19 cases in Indonesia using data provided by Hendratno who is the Government Official of the Training Center at the Ministry of Communication and Informatics of Indonesia. He shared the data on Kaggle which can be accessed using this [link](https://www.kaggle.com/hendratno/covid19-indonesia). The outline of this report will include, Covid-19 tracker map, Covid-19 line plot, Covid-19 bar plot and prediction of Covid-19 cases using the Prophet package. All analysis will be conducted using the R programming language using RStudio as its IDE and results will be presented as a web application using the RShiny package.
