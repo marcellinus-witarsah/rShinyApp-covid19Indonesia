@@ -111,6 +111,8 @@ Map Tracker
 
 ![Covid_19_Map_Tracker](/images/Covid_19_Map_Tracker.jpg)
 
+![Covid_19_Map_Tracker_#2](/images/Covid_19_Map_Tracker_#2.jpg)
+
 Graphs
 
 ![Covid 19 Bar Plot Province](/images/Covid_19_Bar_Plot_Province.jpg)
