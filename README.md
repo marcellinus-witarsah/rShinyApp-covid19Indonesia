@@ -58,29 +58,38 @@ Then to make a select input list first we need to make the visual using updatepi
 Next, we build our system in a new script to update our data from the select option. If we pick the plot bar the system will trigger the function which will update our data to the new data that we picked. In the new script named ui_plot_page we make the pickerinput() this function is used to display the choices that were made. Then we set the picker table size by using the box() function. 
 
 # Predicting Covid 19 Using Prophet library (Kevin Subiyantoro)
-Machine Learning Method
+## Machine Learning Method
 For performing a machine learning method into our Covid-19 Indonesia data, we will be using a famous library package called Prophet. Prophet is an open source TIme Series Forecasting Algorithm developed by the data science team from Facebook. This library is aimed for those who are not an expert in time series forecasting and analytics.
+
 In this Project we are using Facebook’s Prophet library, as our prediction model. Here is the link for the Prophet documentation https://peerj.com/preprints/3190.pdf.
-Modelling Using fbprophet
+
+## Modelling Using fbprophet
 A very fundamental part in understanding time series is to be able to decompose its underlying components. A classic way in describing a time series is using General Additive Model (GAM). This definition describes time series as a summation of its components. As a starter, we will define time series with 3 different components:
-Trend (T): Long term movement in its mean
-Seasonality (S): Repeated seasonal effects
-Residuals (E): Irregular components or random fluctuations not described by trend and seasonality
+* Trend (T): Long term movement in its mean
+* Seasonality (S): Repeated seasonal effects
+* Residuals (E): Irregular components or random fluctuations not described by trend and seasonality
+
 The idea of GAM is that each of them is added to describe our time series:
+
 Y(t)=T(t)+S(t)+E(t)
+
 When we are discussing time series forecasting there is one main assumption that needs to be remembered: We assume correlation among successive observations. Means that the idea of performing a forecasting for a time series is based on its past behavior. So in order to forecast the future values, we will take a look at any existing trend and seasonality of the time series and use it to generate future values.
+
 The Prophet enhanced the classical trend and seasonality components by adding a holiday effect. It will try to model the effects of holidays which occur on some dates and has been proven to be really useful in many cases. Take, for example: Lebaran Season. In Indonesia, it is really common to have an effect on Lebaran season. The effect, however, is a bit different from a classic seasonality effect because it shows the characteristics of an irregular schedule.
 COVID-19 is something new and throws off all our daily activities and events, hence we cannot rely on the holiday effect. Our Dataset is also only a little over one year, so we can't really have a yearly seasonality effect, hence the main component in our model is the trends, and daily seasonality.
-Adjusting Trend Flexibility
+## Adjusting Trend Flexibility
+
 Prophet provided us a tuning parameter to adjust the detection flexibility:
-n_changepoints (default = 25): The number of potential changepoints, not recommended to be tuned, this is better tuned by adjusting the regularization (changepoint_prior_scale)
-changepoint_range (default = 0.8): Proportion of the history in which the trend is allowed to change. Recommended range: [0.8, 0.95]
-changepoint_prior_scale (default = 0.05): The flexibility of the trend, and in particular how much the trend changes at the trend changepoints. Recommended range: [0.001, 0.5]
+* n_changepoints (default = 25): The number of potential changepoints, not recommended to be tuned, this is better tuned by adjusting the regularization (changepoint_prior_scale)
+* changepoint_range (default = 0.8): Proportion of the history in which the trend is allowed to change. Recommended range: [0.8, 0.95]
+* changepoint_prior_scale (default = 0.05): The flexibility of the trend, and in particular how much the trend changes at the trend changepoints. Recommended range: [0.001, 0.5]
+
 Increasing the default value of the parameter above will give extra flexibility to the trend line (overfitting the training data). On the other hand, decreasing the value will cause the trend to be less flexible (underfitting).
+
 In our project we will not use hyperparameter tuning as a user can specify a large number of combinations to generate the predictions, and we do not have time to tune each and everyone of them.
 Performance
 
-Prediction Result
+# Prediction Result
 In this page we will be showing our prediction result of Covid-19 prediction using prophet which will be displayed in R-Shiny Web Application.
 Covid-19 Cases in Country Level
 
