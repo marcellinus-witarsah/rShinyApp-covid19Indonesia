@@ -31,9 +31,11 @@ Then we will be using a leaflet package to draw the choropleth map. All steps of
  
 After that we will display it in the R Shiny web application and we will add a value box which we will be colored in orange (total cases), red (total deaths), green (total recovered), and blue (total provinces). There will be a table displayed to give further information about Covid-19 cases according to input date from slider input. Further information about the rShiny web application will be displayed within the code.
 
-![Covid App Tracker](/pictures/Covid_19_Map_Tracker.jpg)
+![Covid App Tracker](/images/Covid_19_Map_Tracker.jpg)
 
 # Covid 19 Line Plot (Kelvin Wyeth)
+
+![Covid 19 Line Plot](/images/Covid 19 Line Plot.jpg)
 Next is the plot page, which consists of both the line graph and bar graph visualization of the COVID-19 data of Indonesia.
 In order to create the line plot graph of the data, as shown above, we need to load the libraries necessary to make a simple plot graph, such as ggplot, plotly, data, and tidyverse. The simple line plot is then created using the steps below:
 
@@ -58,6 +60,8 @@ To make Bar Plot we first need to load the library tidyverse, ggplot & data, and
 
 Then to make a select input list first we need to make the visual using updatepickertinput() to change the value of a select input on the client. Then we categorize the session, inputID and the choice. In our case we use 4 picker inputs to call our data such as Select Type of Plot, Level, Select Province, Select Cases. each of them has their choice for example Select Type of Plot consist of lone and bar plot, level consist of country and province and so on. Next we have the function of the bar plot. Our case it will show the sum of the max case, death, recovered and active by hovering the 
 Next, we build our system in a new script to update our data from the select option. If we pick the plot bar the system will trigger the function which will update our data to the new data that we picked. In the new script named ui_plot_page we make the pickerinput() this function is used to display the choices that were made. Then we set the picker table size by using the box() function. 
+
+![Covid 19 Bar Plot Province](/images/Covid 19 Bar Plot Province.jpg)
 
 # Predicting Covid 19 Using Prophet library (Kevin Subiyantoro)
 ## Machine Learning Method
@@ -95,7 +99,7 @@ Performance
 In this page we will be showing our prediction result of Covid-19 prediction using prophet which will be displayed in R-Shiny Web Application.
 Covid-19 Cases in Country Level
 
-
+![Covid 19 Prediction Cases Country](/images/Covid 19 Prediction Cases Country.jpg)
 
 
 Covid-19 Cases in Province Level
