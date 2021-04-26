@@ -111,7 +111,7 @@ Map Tracker
 
 ![Covid_19_Map_Tracker](/images/Covid_19_Map_Tracker.jpg)
 
-![Covid_19_Map_Tracker_#2](/images/Covid_19_Map_Tracker_#2.jpg)
+![Covid_19_Map_Tracker_2](/images/Covid_19_Map_Tracker_2.jpg)
 
 Graphs
 
