@@ -24,6 +24,7 @@ For making Covid 19 Tracker Map we will be needing Indonesia geojson data which 
 3. Then we will reorder the data so that each province in our data has the same order as the geojson data.
 
 Then we will be using a leaflet package to draw the choropleth map. All steps of drawing the choropleth map will be explained below:
+
 1. We use the leaflet() function and pass in the geojson data that has been read using geojson_read() as an argument. Then we will pipe it to the addProviderTiles() function to add the map.
 2. After that we will pipe it to the addPolygons() function to draw the polygon according to geojson data multipolygon points. We can specify an argument inside addPolygons() function to modify and customize the look of the choropleth map. Then, we will pipe it to addCircleMarkers() function for adding a circle mark on every province using longitude and latitude point in our Covid-19 Indonesia data. Lastly we can add legend using addLegend() function to give some clarity about the data to our viewer.
  
@@ -33,22 +34,26 @@ After that we will display it in the R Shiny web application and we will add a v
 # Covid 19 Line Plot (Kelvin Wyeth)
 Next is the plot page, which consists of both the line graph and bar graph visualization of the COVID-19 data of Indonesia.
 In order to create the line plot graph of the data, as shown above, we need to load the libraries necessary to make a simple plot graph, such as ggplot, plotly, data, and tidyverse. The simple line plot is then created using the steps below:
-Call the ggplot() function, which will then specify the data object for the line graph.
-Call the aes() function in order to set the data in graph, in which the X axis is the Date, and the Y axis is the Data. The colors are based on the Category chosen.
-Call the geom functions in order to produce data based on the category chosen. The geom_area() function is meant for the Country option, while geom_line() is meant for the Province option.
+
+1. Call the ggplot() function, which will then specify the data object for the line graph.
+2. Call the aes() function in order to set the data in graph, in which the X axis is the Date, and the Y axis is the Data. The colors are based on the Category chosen.
+3. Call the geom functions in order to produce data based on the category chosen. The geom_area() function is meant for the Country option, while geom_line() is meant for the Province option.
+
 In order to make a list to select the input desired, we needed to make the visualization with the updatePickerInput() function in order to form the input. The choices will then be sorted into sessions, inputID, and choices., and each of the four input levels has their own respective choices. The four input levels are:
-Select the Type of Plot: Plot visualization, choice is between Line Plot or Bar Plot
-Level: Level of data detail, choice is between Country or Province
-Select Province: Chosen if Province is selected, choice is between the 33 Provinces of Indonesia
-Select Cases: Choices are Cases, Deaths, Recovered, and Active. Additional choices are for data frequency, such as Cumulative, All, and Daily.
-Select Date: Use the slider to adjust the date of the data update.
+1. Select the Type of Plot: Plot visualization, choice is between Line Plot or Bar Plot
+2. Level: Level of data detail, choice is between Country or Province
+3. Select Province: Chosen if Province is selected, choice is between the 33 Provinces of Indonesia
+4. Select Cases: Choices are Cases, Deaths, Recovered, and Active. Additional choices are for data frequency, such as Cumulative, All, and Daily.
+5. Select Date: Use the slider to adjust the date of the data update.
+
 In order to update the plot visuals based on the selections on the page, we built the system in the ui_plot_page, for both line and bar plots. The sidebar panel and the pickerInput() function shows the choices mentioned above, and the sliderInput() shows the date selection.
 
 # Covid 19 Bar Plot (Kevin Edward)
 To make Bar Plot we first need to load the library tidyverse, ggplot & data, and plotly library. Then we  create simple bar plot using ggplot package using the following step:
-Start by calling ggplot() function, then specify the data object. It has to be a data frame.
-Then set the aes() function: set the categoric variable for Y axis, and numeric for X axis. 
-Then finally call geom_bar() function that makes the height of the bar proportional to the number of cases in each group, then specify stats=”summary” for the dataset. We use coord_flip() to flip the barplot horizontally to make the group table much easier.
+1. Start by calling ggplot() function, then specify the data object. It has to be a data frame.
+2. Then set the aes() function: set the categoric variable for Y axis, and numeric for X axis. 
+3. Then finally call geom_bar() function that makes the height of the bar proportional to the number of cases in each group, then specify stats=”summary” for the dataset. We use coord_flip() to flip the barplot horizontally to make the group table much easier.
+
 Then to make a select input list first we need to make the visual using updatepickertinput() to change the value of a select input on the client. Then we categorize the session, inputID and the choice. In our case we use 4 picker inputs to call our data such as Select Type of Plot, Level, Select Province, Select Cases. each of them has their choice for example Select Type of Plot consist of lone and bar plot, level consist of country and province and so on. Next we have the function of the bar plot. Our case it will show the sum of the max case, death, recovered and active by hovering the 
 Next, we build our system in a new script to update our data from the select option. If we pick the plot bar the system will trigger the function which will update our data to the new data that we picked. In the new script named ui_plot_page we make the pickerinput() this function is used to display the choices that were made. Then we set the picker table size by using the box() function. 
 
