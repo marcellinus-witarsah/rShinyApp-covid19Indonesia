@@ -18,12 +18,15 @@ none | Klemens |  none
 This project is aimed at predicting the outcome of Covid-19 cases in Indonesia using data provided by Hendratno who is the Government Official of the Training Center at the Ministry of Communication and Informatics of Indonesia. He shared the data on Kaggle which can be accessed using this link https://www.kaggle.com/hendratno/covid19-indonesia. The outline of this report will include, Covid-19 tracker map, Covid-19 line plot, Covid-19 bar plot and prediction of Covid-19 cases using the Prophet package. All analysis will be conducted using the R programming language using RStudio as its IDE and results will be presented as a web application using the RShiny package.
 # Covid 19 Tracker Map (Marcel)
 For making Covid 19 Tracker Map we will be needing Indonesia geojson data which can be downloaded from Github using this link https://github.com/anshori/geojsoncombine-corona/tree/master/data (from anshori). This data contains longitudes and latitudes (multipolygon points) for each province in Indonesia. We need to rearrange the order of geojson data to be the same as Covid 19 data in our project. These steps will be explained below:
-Import geojsonio Package in R and read the geojson data using geojson_read() function.
-Take a look in the data and we need to make sure that each data has the same province name. For example, we encountered a different format name for Yogyakarta, in our data is “Daerah Istimewa Yogyakarta” but in the geojson data is "D.I. Yogyakarta". So we need to change it.
-Then we will reorder the data so that each province in our data has the same order as the geojson data.
+
+* Import geojsonio Package in R and read the geojson data using geojson_read() function.
+*Take a look in the data and we need to make sure that each data has the same province name. For example, we encountered a different format name for Yogyakarta, in our data is “Daerah Istimewa Yogyakarta” but in the geojson data is "D.I. Yogyakarta". So we need to change it.
+*Then we will reorder the data so that each province in our data has the same order as the geojson data.
+
 Then we will be using a leaflet package to draw the choropleth map. All steps of drawing the choropleth map will be explained below:
-We use the leaflet() function and pass in the geojson data that has been read using geojson_read() as an argument. Then we will pipe it to the addProviderTiles() function to add the map.
-After that we will pipe it to the addPolygons() function to draw the polygon according to geojson data multipolygon points. We can specify an argument inside addPolygons() function to modify and customize the look of the choropleth map. Then, we will pipe it to addCircleMarkers() function for adding a circle mark on every province using longitude and latitude point in our Covid-19 Indonesia data. Lastly we can add legend using addLegend() function to give some clarity about the data to our viewer. 
+* We use the leaflet() function and pass in the geojson data that has been read using geojson_read() as an argument. Then we will pipe it to the addProviderTiles() function to add the map.
+* After that we will pipe it to the addPolygons() function to draw the polygon according to geojson data multipolygon points. We can specify an argument inside addPolygons() function to modify and customize the look of the choropleth map. Then, we will pipe it to addCircleMarkers() function for adding a circle mark on every province using longitude and latitude point in our Covid-19 Indonesia data. Lastly we can add legend using addLegend() function to give some clarity about the data to our viewer.
+ 
 After that we will display it in the R Shiny web application and we will add a value box which we will be colored in orange (total cases), red (total deaths), green (total recovered), and blue (total provinces). There will be a table displayed to give further information about Covid-19 cases according to input date from slider input. Further information about the rShiny web application will be displayed within the code.
 
 
