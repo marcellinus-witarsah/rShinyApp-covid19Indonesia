@@ -103,20 +103,20 @@ Covid-19 Cases in Country Level
 
 
 Covid-19 Cases in Province Level
-We will show prediction cases only for DKI Jakarta city.
+We will show prediction cases only for Banten.
 
+![Covid 19 Prediction Cases Province Banten](/images/Covid_19_Prediction_Cases_Province_Banten.jpg)
 
-
-
-R-Shiny Result
 Map Tracker
 
-
+![Covid_19_Map_Tracker](/images/Covid_19_Map_Tracker.jpg)
 
 Graphs
 
+![Covid 19 Bar Plot Province](/images/Covid_19_Bar_Plot_Province.jpg)
 
-Prediction
+![Covid 19 Line Plot](/images/Covid_19_Line_Plot.jpg)
 
+![Covid_19_Line_Plot_Province.jpg](images/Covid_19_Line_Plot_Province.jpg)
 
-
+![Covid_19_Bar_Plot_Country](images/Covid_19_Bar_Plot_Country.jpg)
