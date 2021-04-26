@@ -1,3 +1,4 @@
+source("Data Preparation and Preprocessing.R")
 dataMinDate = mapLeafletProvince %>% filter(Date == min(mapLeafletProvince$Date))
 
 map <- leaflet(province) %>%

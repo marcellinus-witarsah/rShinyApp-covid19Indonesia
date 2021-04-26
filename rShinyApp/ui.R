@@ -366,25 +366,25 @@ server <- function(input, output, session) {
     else {
       if (input$selectPlot == "Cases"){
         ggplotly(ggplot(data=data_bar_plot(),
-                        aes(x=reorder(Location,Cases), y=Cases))+
+                        aes(x=reorder(Location,Cases), y=Cases, fill=Location))+
                    geom_bar(stat="summary")+coord_flip()+
                    scale_y_continuous(labels = scales::comma)+labs(x="Location in Indonesia"))
       }
       else if (input$selectPlot == "Deaths"){
         ggplotly(ggplot(data=data_bar_plot(),
-                        aes(x=reorder(Location,Deaths), y=Deaths))+
+                        aes(x=reorder(Location,Deaths), y=Deaths, fill=Location))+
                    geom_bar(stat="summary")+coord_flip()+
                    scale_y_continuous(labels = scales::comma)+labs(x="Location in Indonesia"))
       }
       else if (input$selectPlot == "Recovered"){
         ggplotly(ggplot(data=data_bar_plot(),
-                        aes(x=reorder(Location,Recovered), y=Recovered))+
+                        aes(x=reorder(Location,Recovered), y=Recovered, fill=Location))+
                    geom_bar(stat="summary")+coord_flip()+
                    scale_y_continuous(labels = scales::comma)+labs(x="Location in Indonesia"))
       }
       else if (input$selectPlot == "Active"){
         ggplotly(ggplot(data=data_bar_plot(),
-                        aes(x=reorder(Location, Active), y=Active))+
+                        aes(x=reorder(Location, Active), y=Active, fill=Location))+
                    geom_bar(stat="summary")+coord_flip()+
                    scale_y_continuous(labels = scales::comma)+labs(x="Location in Indonesia"))
       }
@@ -405,6 +405,9 @@ server <- function(input, output, session) {
   )
   
   prophet_model <- eventReactive(input$predictButton,{
+    n_changepoints = 20
+    changepoint_range = 0.8
+    changepoint_prior_scale = 0.05
     if (input$selectLevell == "Country"){
       d <- covidCountry %>%
         group_by(Date) %>%
@@ -414,6 +417,22 @@ server <- function(input, output, session) {
                   Active = sum(max_new_active)) %>% ungroup()%>%
         select(Date, input$selectCase) %>%
         rename(ds=Date, y=input$selectCase)
+      if(input$selectCase == "Cases"){
+        changepoint_range = 0.8
+        changepoint_prior_scale = 0.1
+      }
+      if(input$selectCase == "Deaths"){
+        changepoint_range = 0.95
+        changepoint_prior_scale = 0.1
+      }
+      if(input$selectCase == "Recovered"){
+        changepoint_range = 0.8
+        changepoint_prior_scale = 0.01
+      }
+      if(input$selectCase == "Active"){
+        changepoint_range = 0.001
+        changepoint_prior_scale = 0.95
+      }
     }
     else if ((input$selectLevell == "Province")){
       d <- covidProvince %>%
@@ -426,8 +445,10 @@ server <- function(input, output, session) {
                   select(Date, input$selectCase) %>%
                   rename(ds=Date, y=input$selectCase)
     }
-    return(prophet(d, n.changepoints = 20, changepoint.range = 0.8,
-            changepoint.prior.scale = 0.05, daily.seasonality = TRUE))
+    return(prophet(d, n.changepoints = n_changepoints, 
+                   changepoint.range = changepoint_range,
+                   changepoint.prior.scale = changepoint_prior_scale, 
+                   daily.seasonality = TRUE))
   })
   
   future <- eventReactive(input$predictButton,{
@@ -450,5 +471,8 @@ server <- function(input, output, session) {
   })
 
 }
+
+
+
 
 shinyApp(ui, server)
