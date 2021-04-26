@@ -94,6 +94,7 @@ Increasing the default value of the parameter above will give extra flexibility 
 # Hyperparameter Tuning and Evaluation Performance
 In our project we will use hyperparameter tuning for only model prediction for Covid-19 in country level because we do not have time to tune each province. We perform a parameter tune using Root Mean Squared Error as its evaluation metric. Root Mean Squared Error (RMSE) is the standard deviation of the residuals (prediction errors). Residuals are a measure of how far from the regression line data points are; RMSE is a measure of how spread out these residuals are. In other words, it tells you how concentrated the data is around the line of best fit. Root mean square error is commonly used in climatology, forecasting, and regression analysis to verify experimental results. Below is the formula for RMSE
 ![Covid 19 Prediction Cases Country](/images/RMSE_Formula.png)
+
 The end result of this step we will extract all parameters for whcih will be chosen based on the lowest RMSE. Here is the result.
 ![Covid 19 Prediction Cases Country](/images/Hyperparameter_Tuning_Result.jpg)
 
