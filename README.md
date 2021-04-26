@@ -97,23 +97,24 @@ Performance
 
 # Prediction Result
 In this page we will be showing our prediction result of Covid-19 prediction using prophet which will be displayed in R-Shiny Web Application.
-Covid-19 Cases in Country Level
+
+## Covid-19 Cases in Country Level
 
 ![Covid 19 Prediction Cases Country](/images/Covid_19_Prediction_Cases_Country.jpg)
 
 
-Covid-19 Cases in Province Level
+## Covid-19 Cases in Province Level
 We will show prediction cases only for Banten.
 
 ![Covid 19 Prediction Cases Province Banten](/images/Covid_19_Prediction_Cases_Province_Banten.jpg)
 
-Map Tracker
+## Map Tracker
 
 ![Covid_19_Map_Tracker](/images/Covid_19_Map_Tracker.jpg)
 
 ![Covid_19_Map_Tracker_2](/images/Covid_19_Map_Tracker_2.jpg)
 
-Graphs
+## Graphs
 
 ![Covid 19 Bar Plot Province](/images/Covid_19_Bar_Plot_Province.jpg)
 
