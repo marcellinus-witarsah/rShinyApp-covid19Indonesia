@@ -61,7 +61,7 @@ Next, we build our system in a new script to update our data from the select opt
 ## Machine Learning Method
 For performing a machine learning method into our Covid-19 Indonesia data, we will be using a famous library package called Prophet. Prophet is an open source TIme Series Forecasting Algorithm developed by the data science team from Facebook. This library is aimed for those who are not an expert in time series forecasting and analytics.
 
-In this Project we are using Facebook’s Prophet library, as our prediction model. Here is the link for the Prophet documentation https://peerj.com/preprints/3190.pdf.
+In this Project we are using Facebook’s Prophet library, as our prediction model. Here is the link for the [Prophet documentation](https://peerj.com/preprints/3190.pdf).
 
 ## Modelling Using fbprophet
 A very fundamental part in understanding time series is to be able to decompose its underlying components. A classic way in describing a time series is using General Additive Model (GAM). This definition describes time series as a summation of its components. As a starter, we will define time series with 3 different components:
